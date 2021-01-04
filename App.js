@@ -8,7 +8,7 @@ import {
   Button,
   Alert,
   Platform,
-  StatusBar
+  StatusBar,
 } from "react-native";
 
 export default function App() {
@@ -24,8 +24,8 @@ export default function App() {
             Alert.alert("Login", "You tried logging in", [
               {
                 text: "Ok",
-                onPress: () => console.log("Ok")
-              }
+                onPress: () => console.log("Ok"),
+              },
             ])
           }
         />
@@ -39,14 +39,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
     alignItems: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   title: {
     color: "black",
-    fontSize: 50
+    fontSize: 50,
   },
   loginView: {
     flex: 1,
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
 });
