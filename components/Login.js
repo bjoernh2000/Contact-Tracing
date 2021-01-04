@@ -14,7 +14,9 @@ import {
 export default function Login() {
   return (
     <SafeAreaView styels={styles.container}>
-      <Text>Login</Text>
+      <TouchableOpacity>
+        <Text style={styles.title}>Contact Tracing</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
