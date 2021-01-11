@@ -13,7 +13,7 @@ import {
 
 export default function Login() {
   return (
-    <SafeAreaView styels={styles.container}>
+    <SafeAreaView>
       <TouchableOpacity>
         <Text style={styles.title}>Contact Tracing</Text>
       </TouchableOpacity>

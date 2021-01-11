@@ -1,4 +1,7 @@
+import "react-native-gesture-handler";
 import React, { Component } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import {
   StyleSheet,
   Text,
@@ -10,25 +13,18 @@ import {
   Platform,
   StatusBar,
 } from "react-native";
-import { Login } from "./components/Login";
+import Login from "./components/Login";
+import Home from "./components/Home";
+
+const Stack = createStackNavigator();
 
 class App extends Component {
-  state = {
-    currPage: "home",
-  };
-
-  updateState = (page) => this.setState({ currPage: page });
-
-  renderCases = () => {
-    switch (this.state.currPage) {
-      case "home":
-        return <Login />;
-      case "login":
-        return <Login />;
-      default:
-        return <Text>HELLOO</Text>;
-    }
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      currPage: "home",
+    };
+  }
 
   render() {
     const styles = StyleSheet.create({
@@ -41,6 +37,7 @@ class App extends Component {
       title: {
         color: "black",
         fontSize: 50,
+        textAlign: "center",
       },
       loginView: {
         flex: 1,
@@ -49,26 +46,21 @@ class App extends Component {
     });
 
     return (
-      <SafeAreaView style={styles.container}>
-        <TouchableOpacity>
-          <Text style={styles.title}>Contact Tracing</Text>
-        </TouchableOpacity>
-        <View style={styles.loginView}>
-          <Button
-            title="Test"
-            onPress={() => {
-              this.setState({ currPage: "login" }, () => this.handleCaseView());
-
-              // Alert.alert("Login", "You tried logging in", [
-              //   {
-              //     text: "Ok",
-              //     onPress: () => console.log("Ok"),
-              //   },
-              // ])
-            }}
+      <NavigationContainer>
+        <SafeAreaView>
+          <TouchableOpacity>
+            <Text style={styles.title}>Contact Tracing</Text>
+          </TouchableOpacity>
+        </SafeAreaView>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ title: "Welcome" }}
           />
-        </View>
-      </SafeAreaView>
+          <Stack.Screen name="Login" component={Login} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
