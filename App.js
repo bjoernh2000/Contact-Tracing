@@ -30,7 +30,6 @@ class App extends Component {
     const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: "white",
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       },
@@ -52,7 +51,7 @@ class App extends Component {
             <Text style={styles.title}>Contact Tracing</Text>
           </TouchableOpacity>
         </SafeAreaView>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Home"
             component={Home}

@@ -31,18 +31,17 @@ class Home extends Component {
         return <Text>HELLOO</Text>;
     }
   };
-
   render() {
     const styles = StyleSheet.create({
       container: {
         flex: 1,
-        backgroundColor: "white",
         alignItems: "center",
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       },
       title: {
         color: "black",
-        fontSize: 50,
+        textAlign: "center",
+        fontSize: 30,
       },
       loginView: {
         flex: 1,
@@ -53,7 +52,10 @@ class Home extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.loginView}>
-          <Button title="Button" onPress={() => this.updateState("login")} />
+          <Button
+            title="Login"
+            onPress={() => this.props.navigation.navigate("Login")}
+          />
         </View>
       </SafeAreaView>
     );

@@ -14,9 +14,9 @@ import {
 export default function Login() {
   return (
     <SafeAreaView>
-      <TouchableOpacity>
-        <Text style={styles.title}>Contact Tracing</Text>
-      </TouchableOpacity>
+      <Text style={{ textAlign: "center", textAlignVertical: "center" }}>
+        LoginView
+      </Text>
     </SafeAreaView>
   );
 }
@@ -24,13 +24,13 @@ export default function Login() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "lightgreen",
     alignItems: "center",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   title: {
     color: "black",
-    fontSize: 50,
+    textAlign: "center",
+    fontSize: 30,
   },
   loginView: {
     flex: 1,
