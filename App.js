@@ -37,15 +37,12 @@ class App extends Component {
         color: "black",
         fontSize: 50,
         textAlign: "center",
-      },
-      loginView: {
-        flex: 1,
-        justifyContent: "center",
+        backgroundColor: "#f4511e",
       },
     });
 
     return (
-      <NavigationContainer>
+      <NavigationContainer style={styles.container}>
         <SafeAreaView>
           <TouchableOpacity>
             <Text style={styles.title}>Contact Tracing</Text>
@@ -55,9 +52,30 @@ class App extends Component {
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{ title: "Welcome" }}
+            options={{
+              title: "Welcome",
+              headerStyle: {
+                backgroundColor: "#f4511e",
+              },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                fontWeight: "bold",
+              },
+            }}
           />
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerStyle: {
+                backgroundColor: "#f4511e",
+              },
+              headerTintColor: "#fff",
+              headerTitleStyle: {
+                fontWeight: "bold",
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     );
