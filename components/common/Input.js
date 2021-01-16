@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, Text } from "react-native";
+import { View, TextInput, Text, StyleSheet } from "react-native";
 
 const Input = ({
   label,

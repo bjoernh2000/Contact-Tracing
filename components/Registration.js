@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { Input, TextLink, Button, Loading } from "./common";
 
 class Registration extends Component {
@@ -55,6 +55,8 @@ class Registration extends Component {
             }
           />
         </View>
+        <Text style={styles.errorTextStyle}>{error}</Text>
+        {!loading ? <Button>Register</Button> : <Loading size={"large"} />}
       </View>
     );
   }
@@ -71,6 +73,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     backgroundColor: "#fff",
     borderColor: "#ddd",
+  },
+  errorTextStyle: {
+    alignSelf: "center",
+    fontSize: 18,
+    color: "red",
   },
 });
 

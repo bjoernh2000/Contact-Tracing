@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const Button = ({ onPress, children }) => {
-  <View style={{ flexDirection: "row" }}>
-    <TouchableOpacity onPress={onPress} style={styles.button}>
-      <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
-  </View>;
+  return (
+    <View style={{ flexDirection: "row" }}>
+      <TouchableOpacity onPress={onPress} style={styles.button}>
+        <Text style={styles.text}>{children}</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Login, Registration } from "../components";
 
 export class Auth extends Component {
@@ -8,22 +8,23 @@ export class Auth extends Component {
     this.state = {
       login: false,
     };
+    this.renderForms = this.renderForms.bind(this);
   }
 
-  renderForms = () => {
-    if (this.login) {
+  renderForms() {
+    if (this.state.login) {
       return <Login switchState={this.switchState} />;
     } else {
       return <Registration switchState={this.switchState} />;
     }
-  };
+  }
 
   switchState = () => {
     this.setState({ login: !this.state.login });
   };
 
   render() {
-    return <View style={styles.container}> {this.renderForms} </View>;
+    return <View style={styles.container}>{this.renderForms()}</View>;
   }
 }
 
