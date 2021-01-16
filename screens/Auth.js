@@ -9,8 +9,21 @@ export class Auth extends Component {
       login: false,
     };
   }
+
+  renderForms = () => {
+    if (this.login) {
+      return <Login switchState={this.switchState} />;
+    } else {
+      return <Registration switchState={this.switchState} />;
+    }
+  };
+
+  switchState = () => {
+    this.setState({ login: !this.state.login });
+  };
+
   render() {
-    return <View style={styles.container}></View>;
+    return <View style={styles.container}> {this.renderForms} </View>;
   }
 }
 
