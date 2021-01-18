@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   StyleSheet,
   Text,
@@ -8,12 +8,19 @@ import {
   StatusBar,
 } from "react-native";
 
-export default function Login() {
-  return (
-    <SafeAreaView>
-      <Text style={{ textAlign: "center", textAlignVertical: "center" }}>
-        LoginView
-      </Text>
-    </SafeAreaView>
-  );
+class Login extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <SafeAreaView>
+        <Text style={{ textAlign: "center", textAlignVertical: "center" }}>
+          LoginView
+        </Text>
+      </SafeAreaView>
+    );
+  }
 }
+
+export { Login };

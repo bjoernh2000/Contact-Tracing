@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { SafeAreaView, View, StyleSheet } from "react-native";
 import { Login, Registration } from "../components";
 
 export class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      login: false,
+      login: true,
     };
     this.renderForms = this.renderForms.bind(this);
   }
@@ -24,7 +24,9 @@ export class Auth extends Component {
   };
 
   render() {
-    return <View style={styles.container}>{this.renderForms()}</View>;
+    return (
+      <SafeAreaView style={styles.container}>{this.renderForms()}</SafeAreaView>
+    );
   }
 }
 
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
 
